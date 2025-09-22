@@ -1,0 +1,16 @@
+a = int(input('a = '))
+b = int(input('b = '))
+
+def primes_numbers_range(a, b):
+    primes = []
+    for number in range(a, b + 1):
+        if number > 1:
+            for i in range(2, int(number ** 0.5) + 1):
+                if number % i == 0:
+                    break
+            else:
+                primes.append(number)
+    return primes
+
+prime_numbers = primes_numbers_range(a, b)
+print(f"Result: {prime_numbers}")
